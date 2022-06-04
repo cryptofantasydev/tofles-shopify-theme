@@ -120,11 +120,16 @@
   {%- endunless -%}
 
   <div class="tt-swatches-container tt-swatches-container-js"></div>
-  
-  <div id="order_soon_div">
-    <i class="icon-f-92 order_soon_icon "></i>	
-    <div class="order_soon_text">{{ settings.text_order_soon }}</div>
+  {% for variant in product.variants %}
+  <div data-variant-id="{{ variant.id }}" class="order_soon_div">
+    {% if variant.metafields.preorder.message != blank %}
+      <i class="icon-f-92 order_soon_icon"></i>	
+      <div class="order_soon_text">
+        {{ variant.metafields.preorder.message }}
+      </div>
+    {% endif %}
   </div>
+  {% endfor %}
 
   {% if section.settings.shipping_message_text != blank %}
     <div class="shipping-date-message">

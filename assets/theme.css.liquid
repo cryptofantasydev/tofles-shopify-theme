@@ -41018,12 +41018,15 @@ header:not(.small-header) .openedsearch-fullscreen .tt-search-opened-headtype1{
 	display: none !important;
 }
 
-#order_soon_div {
+.order_soon_div {
   display: none;
   justify-content: flex-start;
   align-items: center;
   margin: 20px 0;
   padding: 0 5px;
+}
+.order_soon_div.active {
+  display: flex;
 }
 .order_soon_text {
   margin-left: 10px;
@@ -41144,7 +41147,7 @@ margin-right: 0 !important;
 
 @media (max-width: 767px){
   
-  #order_soon_div {
+  .order_soon_div {
   	justify-content: center;
   }
   
